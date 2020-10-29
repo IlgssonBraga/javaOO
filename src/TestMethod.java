@@ -1,6 +1,6 @@
 public class TestMethod {
     public static void main(String[] args) {
-        Account account1 = new Account();
+        Account account1 = new Account(1264, 223751);
 
         account1.deposit(50);
 
@@ -8,7 +8,7 @@ public class TestMethod {
 
         System.out.println(account1.getBalance());
 
-        Account account2 = new Account();
+        Account account2 = new Account(1264, 223751);
 
         account1.deposit(1000);
 

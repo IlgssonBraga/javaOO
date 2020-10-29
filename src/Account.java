@@ -3,6 +3,13 @@ public class Account {
     private int agency;
     private int number;
     private Client holder;
+    private static int total;
+
+    public Account(int agency, int number){
+        total++;
+        this.agency = agency;
+        this.number = number;
+    }
 
     public void deposit(double value){
         this.balance += value;
@@ -35,8 +42,8 @@ public class Account {
         return this.holder;
     }
 
-    public void setHolder(Client newCliente){
-        this.holder = newCliente;
+    public void setHolder(Client cliente){
+        this.holder = cliente;
     }
 
     public int getNumber(){
@@ -44,14 +51,26 @@ public class Account {
     }
 
     public void setNumber(int newNumber) {
+        if(newNumber <= 0){
+            System.out.println("O número da conta não pode ter valor negativo!");
+            return;
+        }
         this.number = newNumber;
     }
 
     public void setAgency(int agency) {
+        if(agency <= 0){
+            System.out.println("A agência não pode ter valor negativo!");
+            return;
+        }
         this.agency = agency;
     }
 
     public int getAgency() {
         return agency;
+    }
+
+    public static int getTotal() {
+        return total;
     }
 }
