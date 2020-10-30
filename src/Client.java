@@ -2,7 +2,11 @@ public class Client implements Authentically {
     private String name;
     private String cpf;
     private String occupation;
-    private String password;
+    private AuthUtil util;
+
+    public Client(){
+        this.util = new AuthUtil();
+    }
 
     public String getName() {
         return name;
@@ -10,16 +14,12 @@ public class Client implements Authentically {
 
     @Override
     public void setPassword(String password){
-        this.password = password;
+        this.util.setPassword(password);
     }
 
     @Override
     public boolean auth(String password) {
-        if(this.password == password){
-            return true;
-        }else{
-            return false;
-        }
+        return this.util.auth(password);
     }
 
     public void setName(String name) {
