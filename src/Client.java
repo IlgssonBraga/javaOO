@@ -1,10 +1,25 @@
-public class Client {
+public class Client implements Authentically {
     private String name;
     private String cpf;
     private String occupation;
+    private String password;
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public void setPassword(String password){
+        this.password = password;
+    }
+
+    @Override
+    public boolean auth(String password) {
+        if(this.password == password){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public void setName(String name) {

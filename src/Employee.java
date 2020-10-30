@@ -1,6 +1,7 @@
 import kotlin.reflect.jvm.internal.impl.util.ModuleVisibilityHelper;
 
 public abstract class Employee {
+
     private String name;
     private String cpf;
     private double salary;

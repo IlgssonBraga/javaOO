@@ -1,4 +1,5 @@
-public class Manager extends Employee implements Authentically {
+public class Adm extends Employee implements Authentically {
+
     private String password;
 
     @Override
@@ -15,8 +16,8 @@ public class Manager extends Employee implements Authentically {
         }
     }
 
+    @Override
     public double getBonus(){
-        return super.getSalary();
-     }
-
+        return 50;
+    }
 }
