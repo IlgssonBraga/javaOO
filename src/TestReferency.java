@@ -6,7 +6,7 @@ public class TestReferency {
         String name = m1.getName();
         m1.setSalary(5000);
 
-        Employee e1 = new Employee();
+        Employee e1 = new Manager();
         e1.setSalary(2500);
 
         BonusController controller = new BonusController();
